@@ -1,12 +1,19 @@
 {
   "image": "ghcr.io/andreilgeorgescu/devcontainer-base:2",
   "features": {
-    "ghcr.io/devcontainers-contrib/features/haskell:2": {},
+    "ghcr.io/devcontainers-contrib/features/haskell:2": {
+      "installHLS": true,
+      "downgradeGhcToSupportHls": true,
+      "adjustBash": true,
+      "ghcVersion": "9.4.8",
+      "cabalVersion": "3.10.2.1",
+      "globalPackages": "",
+    },
   },
   "customizations": {
     "vscode": {
       "extensions": ["haskell.haskell"],
     },
   },
-  "updateContentCommand": "curl 'https://www.toptal.com/developers/gitignore/api/haskell' >> .gitignore",
+  "updateContentCommand": "echo '' >> .gitignore && curl 'https://www.toptal.com/developers/gitignore/api/haskell' >> .gitignore",
 }
